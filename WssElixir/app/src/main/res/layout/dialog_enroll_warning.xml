@@ -2,13 +2,15 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="14dp"
+    android:paddingVertical="24dp">
 
     <View
         android:id="@+id/vEnrollDialogIconBackground"
         android:layout_width="52dp"
         android:layout_height="52dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="4dp"
         android:background="#F5F5F5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,13 +40,10 @@
         android:id="@+id/llEnrollDialogExitButton"
         android:layout_width="116dp"
         android:layout_height="41dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="18dp"
-        android:layout_marginBottom="24dp"
         android:background="#F5F5F5"
         android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/llEnrollDialogKeepButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvEnrollDialogTitle">
 
@@ -62,7 +61,7 @@
         android:layout_height="41dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="18dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="10dp"
         android:background="#FFC107"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
