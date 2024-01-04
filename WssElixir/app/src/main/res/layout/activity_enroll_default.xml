@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#666666">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/svEnroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="-134dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clEnrollDefaultInfo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF">
+
+                <ImageView
+                    android:id="@+id/ivEnrollCoverBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="252dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/testsample"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteX="0dp" />
+
+                <TextView
+                    android:id="@+id/tvEnrollNovelTitle"
+                    android:layout_width="248dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="96dp"
+                    android:ellipsize="end"
+                    android:maxLines="3"
+                    android:text="당신의 이해를 돕기 위하여"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvEnrollNovelWriter"
+                    android:layout_width="248dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="이보라 / 로판"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvEnrollNovelTitle" />
+
+                <ImageView
+                    android:id="@+id/ivEnrollCover"
+                    android:layout_width="128dp"
+                    android:layout_height="196dp"
+                    android:layout_marginTop="22dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/testsample"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvEnrollNovelWriter" />
+
+                <RatingBar
+                    android:id="@+id/rbEnrollRating"
+                    style="@style/EnrollRatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:numStars="5"
+                    android:rating="0"
+                    android:stepSize="0.5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivEnrollCover" />
+
+                <TextView
+                    android:id="@+id/tvEnrollReadStatusTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="56dp"
+                    android:text="읽은 상태"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rbEnrollRating" />
+
+                <TextView
+                    android:id="@+id/tvEnrollReadStatusSuffix"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" *"
+                    app:layout_constraintStart_toEndOf="@id/tvEnrollReadStatusTitle"
+                    app:layout_constraintTop_toTopOf="@+id/tvEnrollReadStatusTitle" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvEnrollReadStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintStart_toStartOf="@id/tvEnrollReadStatusTitle"
+                    app:layout_constraintTop_toBottomOf="@id/tvEnrollReadStatusTitle" />
+
+                <TextView
+                    android:id="@+id/tvEnrollReadDateTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="35dp"
+                    android:text="읽은 날짜"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rvEnrollReadStatus" />
+
+                <ImageView
+                    android:id="@+id/ivEnrollDateSwitch"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:paddingVertical="8dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/testsample"
+                    app:layout_constraintBottom_toBottomOf="@id/tvEnrollReadDateTitle"
+                    app:layout_constraintStart_toEndOf="@id/tvEnrollReadDateTitle"
+                    app:layout_constraintTop_toTopOf="@id/tvEnrollReadDateTitle" />
+
+                <LinearLayout
+                    android:id="@+id/llEnrollReadDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="35dp"
+                    android:background="#F5F5F5"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvEnrollReadDateTitle">
+
+                    <TextView
+                        android:id="@+id/tvEnrollReadDateStart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="16dp"
+                        android:text="2023-12-26" />
+
+                    <TextView
+                        android:id="@+id/tvEnrollReadDateTilde"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:text="~" />
+
+                    <TextView
+                        android:id="@+id/tvEnrollReadDateEnd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="2023-12-26" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/ivEnrollDateEdit"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="16dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/testsample" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clEnrollKeyword"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="35dp"
+                android:background="#FFFFFF"
+                app:layout_constraintTop_toBottomOf="@id/clEnrollDefaultInfo">
+
+                <TextView
+                    android:id="@+id/tvEnrollKeywordTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="35dp"
+                    android:text="키워드"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llEnrollKeyword"
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="18dp"
+                    android:background="#F5F5F5"
+                    app:layout_constraintTop_toBottomOf="@id/tvEnrollKeywordTitle">
+
+                    <ImageView
+                        android:id="@+id/ivEnrollKeyword"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="13dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/testsample" />
+
+                    <TextView
+                        android:id="@+id/tvEnrollKeyword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="15dp"
+                        android:text="키워드 등록" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvEnrollKeyword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="35dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/llEnrollKeyword" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tvEnrollNovelDetailTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="32dp"
+                android:text="작품 소개"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/clEnrollKeyword" />
+
+            <TextView
+                android:id="@+id/tvEnrollNovelDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:text="왕실에는 막대한 빚이 있었고, 그들은 빚을 갚기 위해 왕녀인 바이올렛을 막대한 돈을 지녔지만 공작의 사생/아인 윈터에게 시집보낸다.  '태어나서 이렇게 멋있는 남자는 처음 봐…….' 왕실에는 막대한 빚이 있었고, 그들은 빚을 갚기 위해 왕녀인 바이올렛을 막대한 돈을 지녔지만 공작의 사생/아인 윈터에게 시집보낸다."
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvEnrollNovelDetailTitle" />
+
+            <TextView
+                android:id="@+id/tvEnrollNovelSiteTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="35dp"
+                android:text="작품 보러가기"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvEnrollNovelDetail" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvEnrollNovelSite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvEnrollNovelSiteTitle" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llEnrollButton"
+                android:layout_width="match_parent"
+                android:layout_height="53dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="114dp"
+                android:layout_marginBottom="28dp"
+                android:background="#F5F5F5"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvEnrollNovelSite">
+
+                <TextView
+                    android:id="@+id/tvEnrollButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="내 서재에 등록" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/alEnrollAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
